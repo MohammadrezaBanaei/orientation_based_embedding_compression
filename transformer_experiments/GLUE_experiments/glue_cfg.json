@@ -1,0 +1,20 @@
+{
+  "save_dir": "",
+  "run_name": "test",
+  "run_type": "ae",
+  "task_name": "mrpc",
+  "crs": ["2.5", "5.0", "10"],
+  "pre_trained_ae": {
+    "2.5": "path/to/pretrained_model",
+    "5.0": "path/to/pretrained_model",
+    "10": "path/to/pretrained_model"
+  },
+  "svd_iters": {
+     "2.5": 29,
+     "5.0": 29,
+     "10.0": 9
+  },
+  "seed": 22,
+  "epochs": 3,
+  "eval_steps": 10
+}

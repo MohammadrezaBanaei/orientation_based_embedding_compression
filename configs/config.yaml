@@ -1,0 +1,48 @@
+paths:
+  main_dir: ""
+  experiment_name: ""
+global:
+  seed: 1
+dataset:
+  input_matrix_name: "embedding"
+  input_matrix_subname: "word_embeddings"
+  lm_dataset:
+    wiki_text_103_url: "https://s3.amazonaws.com/research.metamind.io/wikitext/wikitext-103-raw-v1.zip"
+    text_download_folder: "LM_data"
+    LM_text_dataset_path: "LM_data/wikitext-103-raw/wiki.test.raw"
+    text_frequency_dataset_path: "LM_data/wikitext-103-raw/wiki.train.raw"
+    model_name: "bert-base-uncased"
+encoder:
+  is_linear: true
+decoder:
+  is_linear: true
+model:
+  latent_dim: 75
+  weights_path: null
+  svd:
+    init_ae_with_svd: false
+    svd_iters: 29
+training:
+  batch_size: 32
+  lr: 0.001
+  step_lr_scheduler:
+    step_size: 4
+    gamma: 0.5
+  epochs: 20
+  additional_epochs: 10
+ae_run:
+  activated: true
+  loss:
+    cos_dist:
+      coeff: 0.9975
+      scaler_div: 5.0
+    l2_norm:
+      coeff: 0.0
+    l1_norm:
+      coeff: 0.0025
+      start_alpha: 1.0
+      end_alpha: 0.1
+svd_run:
+  activated: false
+  max_iters: 29
+

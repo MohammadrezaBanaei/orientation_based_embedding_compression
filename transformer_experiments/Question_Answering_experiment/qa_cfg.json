@@ -1,0 +1,17 @@
+{
+  "save_dir": "",
+  "run_name": "",
+  "run_type": "ae",
+  "pre_trained_ae": {
+    "dir": ""
+  },
+  "svd_args": {
+    "compression_ratio": 10.0,
+    "num_iters": 9
+  },
+  "seed": 22,
+  "dataset_dir": "QA_Dataset",
+  "train_url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json",
+  "dev_url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json",
+  "test_url": "https://github.com/allenai/bi-att-flow/blob/master/squad/evaluate-v1.1.py"
+}
