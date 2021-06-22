@@ -1,7 +1,7 @@
 # Orientation-based Token Embedding Compression
 
 Official PyTorch implementation of the paper 
-[Direction is what you need: Improving Word Embedding Compression in Large Language Models]().
+[Direction is what you need: Improving Word Embedding Compression in Large Language Models](https://arxiv.org/abs/2106.08181).
 
 ## Requirements
 Please install needed packages by running `pip install -r requirements.txt`. Please note that for SQuAD experiment,
@@ -61,3 +61,11 @@ Please update the paths, `task_name` and your intended hyper-parameters in `glue
 ## Reference
 
 If you found the provided code useful, please consider citing our work.
+```
+@article{balazy2021direction,
+  title={Direction is what you need: Improving Word Embedding Compression in Large Language Models},
+  author={Ba{\l}azy, Klaudia and Banaei, Mohammadreza and Lebret, R{\'e}mi and Tabor, Jacek and Aberer, Karl},
+  journal={arXiv preprint arXiv:2106.08181},
+  year={2021}
+}
+```
