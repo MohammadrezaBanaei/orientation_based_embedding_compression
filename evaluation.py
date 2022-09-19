@@ -7,7 +7,7 @@ from transformers import set_seed
 
 
 def compute_perplexity(mlm_trainer: transformers.trainer.Trainer, reconstructed_embedding: torch.tensor, seed: int):
-    mlm_trainer.model.bert.embeddings.word_embeddings.weight = torch.nn.Parameter(reconstructed_embedding)
+    mlm_trainer.model.bert.embeddings.word_embeddings.weight.copy_(reconstructed_embedding)
     set_seed(seed)
     eval_output = mlm_trainer.evaluate()
     perplexity = math.exp(eval_output["eval_loss"])
