@@ -118,19 +118,19 @@ if __name__ == '__main__':
             losses['l1_norm'] = (losses_cfg['l1_norm']['coeff'], partial(l1_norm_loss,
                                                                          config=losses_cfg['l1_norm'],
                                                                          changing_epochs_num=config['training']['epochs']))
-    train_model(checkpoints_dir=checkpoints_dir,
-                epochs=config['training']['epochs'],
-                additional_epochs=config['training']['additional_epochs'],
-                model=model,
-                data_loader=loader,
-                validation_dataset=token_emb_dataset,
-                writer=ae_writer,
-                optimizer=optimizer,
-                scheduler=scheduler,
-                losses=losses,
-                mlm_trainer=mlm_trainer,
-                seed=config["global"]["seed"],
-                device=device)
+        train_model(checkpoints_dir=checkpoints_dir,
+                    epochs=config['training']['epochs'],
+                    additional_epochs=config['training']['additional_epochs'],
+                    model=model,
+                    data_loader=loader,
+                    validation_dataset=token_emb_dataset,
+                    writer=ae_writer,
+                    optimizer=optimizer,
+                    scheduler=scheduler,
+                    losses=losses,
+                    mlm_trainer=mlm_trainer,
+                    seed=config["global"]["seed"],
+                    device=device)
 
     with open(os.path.join(exp_dir, 'config.yml'), 'w') as outfile:
         yaml.dump(config, outfile, default_flow_style=False)
